@@ -1,0 +1,15 @@
+button{
+    margin-right: 5px;
+}
+p{
+    margin-top: 5px;
+}
+.online{
+    color: lightgreen;
+}
+.offline{
+    color: orange;
+}
+input{
+    margin-bottom: 5px;
+}

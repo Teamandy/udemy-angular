@@ -1,0 +1,11 @@
+<label>ServerGen</label>
+<input type="text" class="form-control" [(ngModel)]="serverName" placeholder={{placeholder}} >
+
+<button [disabled]="!allowServer" class="btn btn-primary" (click)="onAddServer()">Add server!</button>
+
+<ng-container *ngFor="let server of servers">
+  <p [ngClass]="getClass(server)">
+    {{server.name}}: {{server.status}}
+    <button class="btn btn-warning" (click)="onRemoveServer(server.id)">X</button>
+  </p>
+</ng-container>
