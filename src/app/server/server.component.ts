@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 interface Server {
   id: number;
@@ -16,6 +16,7 @@ export class ServerComponent implements OnInit {
   placeholder: string = 'add server...';
   serverName: string = '';
   id: number = 1;
+  @ViewChild('serverNameInput', {static:true}) servInput: ElementRef;
 
   constructor() { }
 
@@ -23,6 +24,7 @@ export class ServerComponent implements OnInit {
   }
 
   private onAddServer(): void {
+    console.log(this.servInput.nativeElement.value);
     if (!this.allowServer) return;
     const isOnline: boolean = Math.random() > 0.5 ? true : false;
     const status = isOnline && 'online' || 'offline';
